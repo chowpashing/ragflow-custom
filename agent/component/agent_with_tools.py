@@ -74,7 +74,7 @@ class AgentParam(LLMParam, ToolParamBase):
 class Agent(LLM, ToolBase):
     component_name = "Agent"
 
-    def __init__(self, canvas, id, param: LLMParam):
+    def __init__(self, canvas, id, param: AgentParam):
         LLM.__init__(self, canvas, id, param)
         self.tools = {}
         for idx, cpn in enumerate(self._param.tools):
